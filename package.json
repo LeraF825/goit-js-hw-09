@@ -18,7 +18,11 @@
     "url": "https://github.com/LeraF825/goit-js-hw-09/issues"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "flatpickr": "^4.6.13",
+    "i": "^0.3.7",
+    "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.6",
+    "npm": "^9.6.5"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
