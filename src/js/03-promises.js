@@ -6,8 +6,8 @@ form.addEventListener('submit', onSubmit);
 
 function onSubmit(e) {
   e.preventDefault();
-  const delayEl = e.target.elements.delay.value;
-  const stepEl = e.target.elements.step.value;
+  let delayEl = Number(e.target.elements.delay.value);
+  let stepEl = Number(e.target.elements.step.value);
   const amountEl = e.target.elements.amount.value;
   for (let position = 1; position <= amountEl; position += 1) {
     createPromise(position, delayEl)
@@ -21,6 +21,7 @@ function onSubmit(e) {
           `❌ Rejected promise ${position} in ${delay}ms`
         );
       });
+    delayEl += stepEl;
   }
 }
 
@@ -30,9 +31,8 @@ function createPromise(position, delay) {
     setTimeout(() => {
       if (shouldResolve) {
         resolve({ position, delay });
-      } else {
-        reject({ position, delay });
       }
+      reject({ position, delay });
     }, delay);
   });
 }
